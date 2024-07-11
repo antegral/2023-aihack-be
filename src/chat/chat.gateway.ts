@@ -35,7 +35,7 @@ export class ChatGateway {
 
   constructor() {
     this.openai = new OpenAI({
-      apiKey: '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', // defaults to process.env["OPENAI_API_KEY"]
+      apiKey: process.env["OPENAI_API_KEY"],
     });
 
     this.system_prompt = readFileSync('data/unvectorized_database.txt', 'utf8');
