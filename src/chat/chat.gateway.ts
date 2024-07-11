@@ -60,7 +60,7 @@ export class ChatGateway {
     const table = await db.openTable('vectors');
     const vectorStore = new LanceDB(
       new OpenAIEmbeddings({
-        openAIApiKey: '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',
+        openAIApiKey: process.env["OPENAI_API_KEY"],
       }),
       { table },
     );
